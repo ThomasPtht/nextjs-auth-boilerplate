@@ -56,7 +56,7 @@ export async function POST(req: NextRequest) {
     const response = NextResponse.json(
       {
         accessToken,
-        user: { id: user.id, username: user.name, email: user.email },
+        user: { id: user.id, name: user.name, email: user.email },
       },
       { status: 200 },
     );

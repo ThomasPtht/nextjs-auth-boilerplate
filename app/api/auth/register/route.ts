@@ -7,10 +7,10 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
   try {
-    const { email, username, password } = (await req.json()) as RegisterDto;
+    const { email, name, password } = (await req.json()) as RegisterDto;
 
     // Validate fields
-    if (!email || !username || !password) {
+    if (!email || !name || !password) {
       return NextResponse.json(
         { error: "All fields are required" },
         { status: 400 },
@@ -37,7 +37,7 @@ export async function POST(req: NextRequest) {
     //Create user
     await prisma.user.create({
       data: {
-        username,
+        name,
         email,
         password: hashedPassword,
         verificationToken,
