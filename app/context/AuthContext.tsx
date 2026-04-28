@@ -1,5 +1,26 @@
 "use client";
 
+/**
+ * AuthContext - Global authentication state manager
+ *
+ * Provides user session, accessToken, login and logout actions
+ * to the entire app via React Context.
+ *
+ * Usage:
+ * 1. Wrap your app with <AuthProvider> in app/layout.tsx
+ *
+ * 2. Read auth state in any client component:
+ *    const { user, accessToken, isLoading, logout } = useAuth()
+ *
+ * Examples:
+ *    - Display user info:     <p>{user?.name}</p>
+ *    - Protect a component:  if (!user) return <redirect to="/login">
+ *    - Logout button:        <button onClick={logout}>Logout</button>
+ *    - Show loading state:   if (isLoading) return <Spinner />
+ *
+ * Note: useAuth() must be called inside a component wrapped by AuthProvider.
+ */
+
 import {
   createContext,
   useContext,
