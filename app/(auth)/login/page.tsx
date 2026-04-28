@@ -7,7 +7,7 @@ import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
-import { loginSchema, LoginSchema } from "@/app/lib/validations";
+import { loginSchema, LoginSchema } from "@/app/lib/schemas";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 
